@@ -7,12 +7,19 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+            // Tworzenie danych z pliku
         BufferedReader br = new BufferedReader(new FileReader(new File("./src/Day2/input.txt")));
         String[] separated = br.readLine().split(",");
+        //Tworzenie ciągu.
         int[] input = new int[separated.length];
         for (int i = 0; i < separated.length; i++) {
             input[i] = Integer.parseInt(separated[i]);
         }
+
+        //Rozwiązanie 1 części zadania
+        input[1] = 12;
+        input[2] = 2;
+        System.out.println("1 odpowiedź: " + calculateOpcodes(input.clone()));
 
         //Sprawdzanie verba i neuna, żeby osiągnąć 19690720
         Point point = new Point(0, 0, false);
@@ -29,7 +36,7 @@ public class Main {
                 break;
             }
         }
-        System.out.println("Odpowiedź to: " + getAnswer(point.getNoun(), point.getVerb()));
+        System.out.println("2 odpowiedź: " + getAnswer(point.getNoun(), point.getVerb()));
     }
 
     private static int calculateOpcodes(int[] input) {

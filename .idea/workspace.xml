@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1280937f-d1d1-4f3a-88a7-7ec7ee161c60" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdventCode2019.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/AdventCode2019/Day1/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/AdventCode2019/Day1/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day1/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day1/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day2/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day2/Opcode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day2/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day2/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day2/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day2/input.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +33,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager" selected="Application.Main (1)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -105,6 +98,11 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/AdventCode2019" />
+    </ignored-roots>
+  </component>
   <component name="WindowStateProjectService">
     <state x="342" y="191" key="#Notifications" timestamp="1575277123000">
       <screen x="0" y="0" width="1680" height="1010" />
@@ -126,29 +124,38 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="674" y="420" width="356" height="170" key="Github.CreateGistDialog/0.0.1680.1010/1680.-237.1024.1240@0.0.1680.1010" timestamp="1575274257730" />
-    <state width="1637" height="256" key="GridCell.Tab.0.bottom" timestamp="1575358361192">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1575392270154">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1575392270154" />
     <state width="1637" height="256" key="GridCell.Tab.0.bottom/0.0.1680.1010/1680.-237.1024.1240@0.0.1680.1010" timestamp="1575358361192" />
     <state width="981" height="256" key="GridCell.Tab.0.bottom/0.0.1680.1010/1680.-237.1024.1240@1680.-237.1024.1240" timestamp="1575286935088" />
-    <state width="1637" height="256" key="GridCell.Tab.0.center" timestamp="1575358361192">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1575392270153">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
+    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1575392270153" />
     <state width="1637" height="256" key="GridCell.Tab.0.center/0.0.1680.1010/1680.-237.1024.1240@0.0.1680.1010" timestamp="1575358361192" />
     <state width="981" height="256" key="GridCell.Tab.0.center/0.0.1680.1010/1680.-237.1024.1240@1680.-237.1024.1240" timestamp="1575286935088" />
-    <state width="1637" height="256" key="GridCell.Tab.0.left" timestamp="1575358361192">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1575392270153">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
+    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1575392270153" />
     <state width="1637" height="256" key="GridCell.Tab.0.left/0.0.1680.1010/1680.-237.1024.1240@0.0.1680.1010" timestamp="1575358361192" />
     <state width="981" height="256" key="GridCell.Tab.0.left/0.0.1680.1010/1680.-237.1024.1240@1680.-237.1024.1240" timestamp="1575286935087" />
-    <state width="1637" height="256" key="GridCell.Tab.0.right" timestamp="1575358361192">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1575392270154">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
+    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1575392270154" />
     <state width="1637" height="256" key="GridCell.Tab.0.right/0.0.1680.1010/1680.-237.1024.1240@0.0.1680.1010" timestamp="1575358361192" />
     <state width="981" height="256" key="GridCell.Tab.0.right/0.0.1680.1010/1680.-237.1024.1240@1680.-237.1024.1240" timestamp="1575286935088" />
-    <state x="432" y="237" key="Vcs.Push.Dialog.v2" timestamp="1575358415035">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state x="301" y="72" key="SettingsEditor" timestamp="1575391963926">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
+    <state x="301" y="72" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1575391963926" />
+    <state x="411" y="202" key="Vcs.Push.Dialog.v2" timestamp="1575392822715">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="411" y="202" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1575392822715" />
     <state x="432" y="237" key="Vcs.Push.Dialog.v2/0.0.1680.1010/1680.-237.1024.1240@0.0.1680.1010" timestamp="1575358415035" />
     <state x="578" y="331" key="Vcs.Push.Dialog.v2/0.0.1680.1010/1680.-237.1024.1240@1680.-237.1024.1240" timestamp="1575286952466" />
     <state x="541" y="327" key="com.intellij.ide.util.TipDialog" timestamp="1575274226216">
