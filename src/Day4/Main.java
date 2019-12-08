@@ -32,6 +32,7 @@ public class Main {
         for (int i = 1; i < inputAsString.length(); i++) {
             if (inputAsString.charAt(i - 1) == inputAsString.charAt(i)) {
                 haveDouble = true;
+                break;
             }
         }
         return haveDouble;
@@ -43,6 +44,7 @@ public class Main {
         for (int i = 1; i < inputAsString.length(); i++) {
             if (inputAsString.charAt(i - 1) > inputAsString.charAt(i)) {
                 isNonDecrease = false;
+                break;
             }
         }
         return isNonDecrease;
