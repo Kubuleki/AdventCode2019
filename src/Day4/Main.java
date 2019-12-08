@@ -29,7 +29,7 @@ public class Main {
         boolean output = test(input) == shouldPass;
         System.out.print((shouldPass ? "Test dobrego" : "Test złego") + " hasła " + input + " przebiegł:\t");
         System.out.println(output ? "pomyślnie." : "nie pomyślnie.");
-        if(!output){
+        if (!output) {
             System.out.println("\tHED: " + haveExactlyDouble(input) + ", IND: " + isNonDecrease(input));
         }
         return output;
@@ -45,11 +45,14 @@ public class Main {
         goodPasswordTestResult = goodPasswordTestResult && test(113333, true);
 
         // Test potentially bad passwords.
-        boolean badPasswordTestResult = test(123456, false);
+        boolean badPasswordTestResult = test(122234, false);
+        badPasswordTestResult = badPasswordTestResult && test(111112, false);
+        badPasswordTestResult = badPasswordTestResult && test(111123, false);
+        badPasswordTestResult = badPasswordTestResult && test(111111, false);
+        badPasswordTestResult = badPasswordTestResult && test(123456, false);
         badPasswordTestResult = badPasswordTestResult && test(113311, false);
         badPasswordTestResult = badPasswordTestResult && test(113465, false);
         badPasswordTestResult = badPasswordTestResult && test(111345, false);
-        badPasswordTestResult = badPasswordTestResult && test(111444, false);
 
         System.out.println("\n Test dobrych haseł przebiegł:\t" + (goodPasswordTestResult ? "pomyślnie." : "niepomyślnie."));
         System.out.println("Test złych haseł przebiegł:\t" + (badPasswordTestResult ? "pomyślnie." : "niepomyślnie."));
@@ -59,18 +62,19 @@ public class Main {
     public static boolean haveExactlyDouble(int input) {
         String inputAsString = "" + input;
         boolean haveExactlyDouble = false;
+        int currentDigit = inputAsString.charAt(0);
+        int largeGroupDigit = 0;
         for (int i = 1; i < inputAsString.length(); i++) {
-            boolean isEqualToPrevious = inputAsString.charAt(i - 1) == inputAsString.charAt(i);
-            if (isEqualToPrevious) {
+            boolean isEqualPrevious = inputAsString.charAt(i) == currentDigit;
+            if (!haveExactlyDouble && isEqualPrevious && currentDigit != largeGroupDigit) {
                 haveExactlyDouble = true;
-                if (i > 1) {
-                    if (isEqualToPrevious && inputAsString.charAt(i - 2) == inputAsString.charAt(i)) {
-                        haveExactlyDouble = false;
-                    } else {
-                        return true;
-                    }
-                }
+            } else if (haveExactlyDouble && isEqualPrevious){
+                haveExactlyDouble = false;
+                largeGroupDigit = currentDigit;
+            } else if(haveExactlyDouble){
+                return true;
             }
+            currentDigit = inputAsString.charAt(i);
         }
         return haveExactlyDouble;
     }
