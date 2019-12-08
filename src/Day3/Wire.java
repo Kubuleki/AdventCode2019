@@ -21,4 +21,8 @@ public class Wire {
     public String toString() {
         return "" + lines;
     }
+
+    public List<Line> getLines() {
+        return lines;
+    }
 }
