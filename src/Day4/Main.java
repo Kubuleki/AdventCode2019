@@ -14,31 +14,68 @@ public class Main {
         final int MAXIMUM = Integer.parseInt(input[1]);
         int counter = 0;
         for (int i = MINUMUM; i <= MAXIMUM; i++) {
-            counter = test(i) ? counter+1 : counter;
+            counter = test(i) ? counter + 1 : counter;
         }
+        tester();
         System.out.println("Jest " + counter + " możliwych kombinacji, na " + (MAXIMUM - MINUMUM + 1) + " sprawdzonych haseł.");
-        System.out.println("Test dobrego hasła: 112345: " + test(112345));
-        System.out.println("Test złego hasła: 123456" + test(123456));
-        System.out.println("Test złego hasła: 113465" + test(113465));
+
     }
 
     public static boolean test(int input) {
-        return haveDouble(input) && isNonDecrease(input);
+        return haveExactlyDouble(input) && isNonDecrease(input);
     }
 
-    public static boolean haveDouble(int input) {
+    public static boolean test(int input, boolean shouldPass) {
+        boolean output = test(input) == shouldPass;
+        System.out.print((shouldPass ? "Test dobrego" : "Test złego") + " hasła " + input + " przebiegł:\t");
+        System.out.println(output ? "pomyślnie." : "nie pomyślnie.");
+        if(!output){
+            System.out.println("\tHED: " + haveExactlyDouble(input) + ", IND: " + isNonDecrease(input));
+        }
+        return output;
+    }
+
+    public static void tester() {
+        // Test potentially good passwords
+        boolean goodPasswordTestResult = test(112345, true);
+        goodPasswordTestResult = goodPasswordTestResult && test(111344, true);
+        goodPasswordTestResult = goodPasswordTestResult && test(113444, true);
+        goodPasswordTestResult = goodPasswordTestResult && test(112233, true);
+        goodPasswordTestResult = goodPasswordTestResult && test(111133, true);
+        goodPasswordTestResult = goodPasswordTestResult && test(113333, true);
+
+        // Test potentially bad passwords.
+        boolean badPasswordTestResult = test(123456, false);
+        badPasswordTestResult = badPasswordTestResult && test(113311, false);
+        badPasswordTestResult = badPasswordTestResult && test(113465, false);
+        badPasswordTestResult = badPasswordTestResult && test(111345, false);
+        badPasswordTestResult = badPasswordTestResult && test(111444, false);
+
+        System.out.println("\n Test dobrych haseł przebiegł:\t" + (goodPasswordTestResult ? "pomyślnie." : "niepomyślnie."));
+        System.out.println("Test złych haseł przebiegł:\t" + (badPasswordTestResult ? "pomyślnie." : "niepomyślnie."));
+        System.out.println("Poniższy wynik jest " + (goodPasswordTestResult && badPasswordTestResult ? "wiarygodny." : "niewiarygodny.\n"));
+    }
+
+    public static boolean haveExactlyDouble(int input) {
         String inputAsString = "" + input;
-        boolean haveDouble = false;
+        boolean haveExactlyDouble = false;
         for (int i = 1; i < inputAsString.length(); i++) {
-            if (inputAsString.charAt(i - 1) == inputAsString.charAt(i)) {
-                haveDouble = true;
-                break;
+            boolean isEqualToPrevious = inputAsString.charAt(i - 1) == inputAsString.charAt(i);
+            if (isEqualToPrevious) {
+                haveExactlyDouble = true;
+                if (i > 1) {
+                    if (isEqualToPrevious && inputAsString.charAt(i - 2) == inputAsString.charAt(i)) {
+                        haveExactlyDouble = false;
+                    } else {
+                        return true;
+                    }
+                }
             }
         }
-        return haveDouble;
+        return haveExactlyDouble;
     }
 
-    public static boolean isNonDecrease(int input){
+    public static boolean isNonDecrease(int input) {
         String inputAsString = "" + input;
         boolean isNonDecrease = true;
         for (int i = 1; i < inputAsString.length(); i++) {
