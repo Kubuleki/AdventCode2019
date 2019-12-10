@@ -8,7 +8,7 @@ public class Node<T> {
     private Node<T> parent = null;
     private T data;
 
-    public Node(T data){
+    public Node(T data) {
         this.data = data;
     }
 
@@ -22,45 +22,36 @@ public class Node<T> {
         return children;
     }
 
+    public Node<T> getParent() {
+        return parent;
+    }
+
     public void setParent(Node<T> parent) {
         this.parent = parent;
     }
-    public void addChild(T data){
-        Node<T> child = new Node<>(data);
+
+    public void addChild(Node<T> child) {
         child.setParent(this);
         this.children.add(child);
     }
 
-    public void addChild(Node<T> child){
-        child.setParent(this);
-        this.children.add(child);
-    }
-    public T getData(){
+    public T getData() {
         return this.data;
     }
 
-    public void setData(T data) {
-        this.data = data;
-    }
-    public boolean isRoot(){
+    public boolean isRoot() {
         return this.parent == null;
     }
 
-    public boolean isLeaf(){
-        return this.children.size()==0;
-    }
-    public void removeParent(){
-        this.parent = null;
-    }
-    public void printInfo(){
+    public void printInfo() {
         System.out.print("NODE:\t" + this.data);
-        if(!isRoot()){
+        if (!isRoot()) {
             System.out.print("\tPARENT:\t" + this.parent.getData());
         } else {
             System.out.print("\tThis is ROOT.");
         }
         System.out.print("\tChildren count: " + children.size());
-        for(Node<T> n : children){
+        for (Node<T> n : children) {
             System.out.print("\t" + n.getData());
         }
         System.out.println();
