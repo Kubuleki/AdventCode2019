@@ -26,6 +26,6 @@ public class Main {
             nextLine = br.readLine();
         }
         Computer.printHashMap(galaxyMap);
-        System.out.println("Distance: " + Computer.calculateDistance(galaxyMap));
+        System.out.println("Distance: " + Computer.calculateDistance(galaxyMap.get("COM"), 0));
     }
 }

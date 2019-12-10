@@ -1,17 +1,23 @@
 package Day6;
 
 import java.util.HashMap;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Computer {
     public static void printHashMap(HashMap<String, Node<String>> map) {
-        for (Node<String> node : map.values()){
+        for (Node<String> node : map.values()) {
             node.printInfo();
         }
     }
-    public static int calculateDistance(HashMap<String, Node<String>> map){
-        AtomicInteger output = new AtomicInteger();
-            map.forEach((k,v)-> output.addAndGet(v.getChildren().size()));
-                return output.get();
+
+    public static long calculateDistance(Node<String> node, long distance) {
+        node.printInfo();
+        System.out.println("Distance until now: " + distance);
+        long distanceTmp = 0;
+        for (Node<String> child : node.getChildren()) {
+            distanceTmp += calculateDistance(child, distance + 1);
+        }
+        return distance + distanceTmp;
     }
+
+
 }

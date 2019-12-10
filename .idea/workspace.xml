@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1280937f-d1d1-4f3a-88a7-7ec7ee161c60" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Day6/Computer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day6/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day6/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day6/input.txt" afterDir="false" />
+    <list default="true" id="1280937f-d1d1-4f3a-88a7-7ec7ee161c60" name="Default Changelist" comment="Day 6&#10;Done:&#10;Create galaxy map (make planets and link them).&#10;Calculate ammount of plantes.&#10;&#10;ToDo:&#10;Calculate all planets distances to COM.">
+      <change afterPath="$PROJECT_DIR$/src/Day6/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day6/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day6/Computer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day6/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day6/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575913189376</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Day 6&#10;Done:&#10;Create galaxy map (make planets and link them).&#10;Calculate ammount of plantes.&#10;&#10;ToDo:&#10;Calculate all planets distances to COM.">
+      <created>1576004473633</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1576004473633</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -220,7 +226,8 @@
     <MESSAGE value="Day 4&#10;Completed both parts." />
     <MESSAGE value="Day 5&#10;Completed part 1." />
     <MESSAGE value="Day 5&#10;Completed part 2." />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 5&#10;Completed part 2." />
+    <MESSAGE value="Day 6&#10;Done:&#10;Create galaxy map (make planets and link them).&#10;Calculate ammount of plantes.&#10;&#10;ToDo:&#10;Calculate all planets distances to COM." />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 6&#10;Done:&#10;Create galaxy map (make planets and link them).&#10;Calculate ammount of plantes.&#10;&#10;ToDo:&#10;Calculate all planets distances to COM." />
   </component>
   <component name="WindowStateProjectService">
     <state x="342" y="191" key="#Notifications" timestamp="1575277123000">
@@ -244,36 +251,36 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="530" y="176" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1600.860@0.0.1600.860" timestamp="1575911153066" />
-    <state x="454" y="0" key="CommitChangelistDialog2" timestamp="1575913188229">
+    <state x="454" y="0" key="CommitChangelistDialog2" timestamp="1576009240399">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="454" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1575913188229" />
+    <state x="454" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1576009240399" />
     <state x="674" y="420" width="356" height="170" key="Github.CreateGistDialog" timestamp="1575274257730">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="674" y="420" width="356" height="170" key="Github.CreateGistDialog/0.0.1680.1010/1680.-237.1024.1240@0.0.1680.1010" timestamp="1575274257730" />
-    <state width="1557" height="221" key="GridCell.Tab.0.bottom" timestamp="1576004361443">
+    <state width="1557" height="221" key="GridCell.Tab.0.bottom" timestamp="1576009272831">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1576004361443" />
+    <state width="1557" height="221" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1576009272831" />
     <state width="1637" height="256" key="GridCell.Tab.0.bottom/0.0.1680.1010/1680.-237.1024.1240@0.0.1680.1010" timestamp="1575358361192" />
     <state width="981" height="256" key="GridCell.Tab.0.bottom/0.0.1680.1010/1680.-237.1024.1240@1680.-237.1024.1240" timestamp="1575286935088" />
-    <state width="1557" height="221" key="GridCell.Tab.0.center" timestamp="1576004361443">
+    <state width="1557" height="221" key="GridCell.Tab.0.center" timestamp="1576009272831">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1576004361443" />
+    <state width="1557" height="221" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1576009272831" />
     <state width="1637" height="256" key="GridCell.Tab.0.center/0.0.1680.1010/1680.-237.1024.1240@0.0.1680.1010" timestamp="1575358361192" />
     <state width="981" height="256" key="GridCell.Tab.0.center/0.0.1680.1010/1680.-237.1024.1240@1680.-237.1024.1240" timestamp="1575286935088" />
-    <state width="1557" height="221" key="GridCell.Tab.0.left" timestamp="1576004361443">
+    <state width="1557" height="221" key="GridCell.Tab.0.left" timestamp="1576009272831">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1576004361443" />
+    <state width="1557" height="221" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1576009272831" />
     <state width="1637" height="256" key="GridCell.Tab.0.left/0.0.1680.1010/1680.-237.1024.1240@0.0.1680.1010" timestamp="1575358361192" />
     <state width="981" height="256" key="GridCell.Tab.0.left/0.0.1680.1010/1680.-237.1024.1240@1680.-237.1024.1240" timestamp="1575286935087" />
-    <state width="1557" height="221" key="GridCell.Tab.0.right" timestamp="1576004361443">
+    <state width="1557" height="221" key="GridCell.Tab.0.right" timestamp="1576009272831">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1576004361443" />
+    <state width="1557" height="221" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1576009272831" />
     <state width="1637" height="256" key="GridCell.Tab.0.right/0.0.1680.1010/1680.-237.1024.1240@0.0.1680.1010" timestamp="1575358361192" />
     <state width="981" height="256" key="GridCell.Tab.0.right/0.0.1680.1010/1680.-237.1024.1240@1680.-237.1024.1240" timestamp="1575286935088" />
     <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1575847940522">
@@ -296,10 +303,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="301" y="72" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1575391963926" />
-    <state x="411" y="202" key="Vcs.Push.Dialog.v2" timestamp="1575913199335">
+    <state x="411" y="202" key="Vcs.Push.Dialog.v2" timestamp="1576009279660">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="411" y="202" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1575913199335" />
+    <state x="411" y="202" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1576009279660" />
     <state x="432" y="237" key="Vcs.Push.Dialog.v2/0.0.1680.1010/1680.-237.1024.1240@0.0.1680.1010" timestamp="1575358415035" />
     <state x="578" y="331" key="Vcs.Push.Dialog.v2/0.0.1680.1010/1680.-237.1024.1240@1680.-237.1024.1240" timestamp="1575286952466" />
     <state x="541" y="327" key="com.intellij.ide.util.TipDialog" timestamp="1575274226216">
@@ -310,10 +317,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="611" y="295" key="git4idea.merge.GitPullDialog/0.0.1680.1010/1680.-237.1024.1240@0.0.1680.1010" timestamp="1575280057234" />
-    <state x="456" y="195" key="run.anything.popup" timestamp="1576002745059">
+    <state x="456" y="195" key="run.anything.popup" timestamp="1576007914643">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1576002745059" />
+    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1576007914643" />
     <state x="479" y="185" width="672" height="578" key="search.everywhere.popup" timestamp="1575911299691">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
