@@ -3,7 +3,17 @@ package Day3;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Comparator class.
+ */
 public class Comparator {
+    /**
+     * Method returns list of Nodes, where 2 wires are connected at the same time.
+     *
+     * @param wire1 First path.
+     * @param wire2 Second path.
+     * @return Returns list of Nodes, where 2 wires are connected.
+     */
     public static List<Node> getNodes(Wire wire1, Wire wire2) {
         List<Node> nodes = new ArrayList<>();
         int distance1 = 0;
@@ -21,6 +31,13 @@ public class Comparator {
         return nodes;
     }
 
+    /**
+     * Method returns point where lines are crossed.
+     *
+     * @param line1 First line.
+     * @param line2 Second line.
+     * @return Returns point where lines are crossed or null if not.
+     */
     public static Point getPoint(Line line1, Line line2) {
         if (line1.isHorizontal() == line2.isHorizontal()) {
             return null;
@@ -37,6 +54,11 @@ public class Comparator {
         }
     }
 
+    /**
+     * Returns answer for first part of the task.
+     *
+     * @param nodes List of Nodes.
+     */
     public static void getAnswer(List<Node> nodes) {
         Point point = nodes.get(0).getPosition();
         for (Node n : nodes) {
@@ -48,6 +70,11 @@ public class Comparator {
         System.out.println(point + ", distance: " + Comparator.getDistance(point) + ".\n");
     }
 
+    /**
+     * Returns answer for second part of the task.
+     *
+     * @param nodes List of Nodes.
+     */
     public static void getSecondAnswer(List<Node> nodes) {
         Node node = nodes.get(0);
         for (Node n : nodes) {
@@ -59,11 +86,26 @@ public class Comparator {
         System.out.println(node.getPosition() + ", distance: " + node.getDistance());
     }
 
+    /**
+     * Method returns distance between center [0,0] and point.
+     *
+     * @param point Point, which distance is calculate.
+     * @return Returns distance between center [0,0] and point.
+     */
     public static int getDistance(Point point) {
         return Math.abs(point.getY()) + Math.abs(point.getX());
+        // Also works diffrent solution, more elegant, but with more calculations:
+        // return getDistance(new Point(0,0), point);
     }
 
-    public static int getDistance(Point startPoint, Point endPoint) {
-        return Math.abs(startPoint.getX() - endPoint.getX()) + Math.abs(startPoint.getY() - endPoint.getY());
+    /**
+     * Method returns distance between 2 points.
+     *
+     * @param firstPoint  First point.
+     * @param secondPoint Second point.
+     * @return Returns distance between 2 points.
+     */
+    public static int getDistance(Point firstPoint, Point secondPoint) {
+        return Math.abs(firstPoint.getX() - secondPoint.getX()) + Math.abs(firstPoint.getY() - secondPoint.getY());
     }
 }
