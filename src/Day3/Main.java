@@ -15,7 +15,7 @@ public class Main {
     private static int testCounter = 0;
 
     public static void main(String[] args) throws IOException {
-        //test();
+        test();
 
         //Tworzenie obiektów na podstawie danych z pliku input.txt.
         BufferedReader br = new BufferedReader(new FileReader(new File(".\\src\\Day3\\input.txt")));
@@ -25,10 +25,14 @@ public class Main {
         Wire wire2 = new Wire(br.readLine().split(","));
 
         //Obliczanie odpowiedzi.
+        System.out.println("\tANSWERS:");
         Comparator.getAnswer(Comparator.getNodes(wire1, wire2));
         Comparator.getSecondAnswer(Comparator.getNodes(wire1, wire2));
     }
 
+    /**
+     * Test, if programm works correctly, based on examples in task description.
+     */
     public static void test() {
         useTest("R8,U5,L5,D3", "U7,R6,D4,L4", 6, 30);
         useTest("R75,D30,R83,U83,L12,D49,R71,U7,L72", "U62,R66,U55,R34,D71,R55,D58,R83", 159, 610);

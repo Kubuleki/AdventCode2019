@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class Main {
     public static void main(String[] args) throws IOException {
-        //test();
+        test();
         BufferedReader br = new BufferedReader(new FileReader(new File("C:\\Users\\kryceg01\\IdeaProjects\\AdventCode2019\\src\\Day1\\input.txt")));
         int sum = 0;
         int sumRecursive = 0;
@@ -21,6 +21,7 @@ public class Main {
             sum += calculateFuel(Integer.parseInt(input));
             sumRecursive += calculateFuelRecursive(Integer.parseInt(input));
         }
+        System.out.println("\tANSWERS:");
         System.out.println("Sum of the fuel requirements for all of the modules: " + sum);
         System.out.println("Sum of the fuel requirements for all of the modules, including weight of the fuel itself: " + sumRecursive);
     }
@@ -46,9 +47,11 @@ public class Main {
     }
 
     /**
-     * Test, if programm works correctly, based on examples in task description.
+     * Test, if program works correctly, based on examples in task description.
      */
     private static void test() {
+        System.out.println("\tTEST:");
+
         // Part 1:
         // in 100756, out should be 33583
         System.out.println(calculateFuel(100756));

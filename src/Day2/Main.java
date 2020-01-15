@@ -12,6 +12,8 @@ import java.io.IOException;
  */
 public class Main {
     public static void main(String[] args) throws IOException {
+        test();
+
         // Tworzenie danych z pliku
         BufferedReader br = new BufferedReader(new FileReader(new File("./src/Day2/input.txt")));
         String[] separated = br.readLine().split(",");
@@ -22,6 +24,7 @@ public class Main {
             input[i] = Integer.parseInt(separated[i]);
         }
 
+        System.out.println("\tANSWERS:");
         //Rozwiązanie 1 części zadania
         input[1] = 12;
         input[2] = 2;
@@ -68,5 +71,37 @@ public class Main {
      */
     private static int getAnswer(int noun, int verb) {
         return 100 * noun + verb;
+    }
+
+    /**
+     * Test, if program works correctly, based on examples in task description.
+     */
+    public static void test() {
+        int[] input = {1, 9, 10, 3, 2, 3, 11, 0, 99, 30, 40, 50};
+        System.out.println("\tTEST:");
+
+        //Part 1:
+        System.out.println("Answer should be 3500.");
+        System.out.println("Value on the position[0]: " + calculateOpcodes(input.clone()));
+        System.out.println(calculateOpcodes(input.clone()) == 3500 ? "Test 1 passed.\n" : "Test 1 failed.\n");
+
+        //Part 2:
+        System.out.println("Neun should be 5, Verb 2, index 0 value 250, answer 502");
+        int Noun = 0;
+        int Verb = 0;
+        lookingForAnswer:
+        for (int i = 0; i < 100; i++) {
+            for (int j = 0; j < 100; j++) {
+                input[1] = i;
+                input[2] = j;
+                if (calculateOpcodes(input.clone()) == 250) {
+                    Noun = input[1];
+                    Verb = input[2];
+                    continue lookingForAnswer;
+                }
+            }
+        }
+        System.out.println("100 * noun + verb = " + getAnswer(Noun, Verb));
+        System.out.println(getAnswer(Noun, Verb) == 502 ? "Test 2 passed.\n" : "Test 2 failed.\n");
     }
 }
