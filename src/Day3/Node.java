@@ -36,4 +36,11 @@ public class Node {
         return distance;
     }
 
+    @Override
+    public String toString() {
+        return "Node{" +
+                "position=" + position +
+                ", distance=" + distance +
+                '}';
+    }
 }

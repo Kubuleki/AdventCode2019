@@ -20,12 +20,16 @@ public class Comparator {
         int distance2 = 0;
         for (int i = 0; i < wire1.getLines().size(); i++) {
             for (int j = 0; j < wire2.getLines().size(); j++) {
-                Point point = getPoint(wire1.getLines().get(i).getItselfStraigth(), wire2.getLines().get(j).getItselfStraigth());
+                Point point = null;
+                if (i != 0 || j != 0) {
+                    point = getPoint(wire1.getLines().get(i).getItselfStraigth(), wire2.getLines().get(j).getItselfStraigth());
+                }
                 if (point != null) {
                     nodes.add(new Node(point, distance1 + distance2 + getDistance(point, wire2.getLines().get(j).getStartPoint()) + getDistance(point, wire1.getLines().get(i).getStartPoint())));
                 }
                 distance2 += getDistance(wire2.getLines().get(j).getStartPoint(), wire2.getLines().get(j).getEndPoint());
             }
+            distance2 = 0;
             distance1 += getDistance(wire1.getLines().get(i).getStartPoint(), wire1.getLines().get(i).getEndPoint());
         }
         return nodes;
@@ -62,7 +66,7 @@ public class Comparator {
     public static void getAnswer(List<Node> nodes) {
         Point point = nodes.get(0).getPosition();
         for (Node n : nodes) {
-            if (getDistance(n.getPosition()) < getDistance(point) && getDistance(n.getPosition()) != 0) {
+            if (getDistance(n.getPosition()) < getDistance(point)) {
                 point = n.getPosition();
             }
         }
@@ -82,8 +86,8 @@ public class Comparator {
                 node = n;
             }
         }
-        System.out.println("The closest Node via Wire length is: ");
-        System.out.println(node.getPosition() + ", distance: " + node.getDistance());
+        System.out.println("The closest Node via Wires length is: ");
+        System.out.println(node.getPosition() + ", distance: " + node.getDistance() + ".\n");
     }
 
     /**

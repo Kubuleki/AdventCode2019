@@ -94,6 +94,6 @@ public class Line {
      */
     @Override
     public String toString() {
-        return (isHorizontal() ? "Horizontal" : "Vertical") + " line from " + startPoint.getX() + "," + startPoint.getY() + " to " + endPoint.getX() + "," + endPoint.getY() + "\n";
+        return (isHorizontal() ? "Horizontal" : "Vertical") + " line from [" + startPoint.getX() + "," + startPoint.getY() + "] to [" + endPoint.getX() + "," + endPoint.getY() + "].\n";
     }
 }
