@@ -1,45 +1,81 @@
 package Day2;
 
+/**
+ * Opcode represented by command type and 3 index integers.
+ */
 public class Opcode {
-    private int command;
+    private Commands command;
     private int firstIndex;
     private int secondIndex;
     private int outputIndex;
 
+    /**
+     * Constructor of Opcode class.
+     *
+     * @param command     Type of command.
+     * @param firstIndex  Index of first integer.
+     * @param secondIndex Index of second integer.
+     * @param outputIndex Index of output integer.
+     */
     public Opcode(int command, int firstIndex, int secondIndex, int outputIndex) {
-        this.command = command;
+        this.command = Commands.fromInt(command);
         this.firstIndex = firstIndex;
         this.secondIndex = secondIndex;
         this.outputIndex = outputIndex;
     }
 
-    public int getCommand() {
+    /**
+     * Method returns type of command.
+     *
+     * @return Type of command.
+     */
+    public Commands getCommand() {
         return command;
     }
 
+    /**
+     * Method returns index of first integer.
+     *
+     * @return Index of first integer.
+     */
     public int getFirstIndex() {
         return firstIndex;
     }
 
+    /**
+     * Method returns index of second integer.
+     *
+     * @return Index of second integer.
+     */
     public int getSecondIndex() {
         return secondIndex;
     }
 
+    /**
+     * Method returns index of output integer.
+     *
+     * @return Index of output integer.
+     */
     public int getOutputIndex() {
         return outputIndex;
     }
 
+    /**
+     * Method do changes on the input table based on given command and variable indexes.
+     *
+     * @param input Input table of integers.
+     * @return Changed table of integers.
+     */
     public int[] change(int[] input) {
         if (outputIndex < input.length && firstIndex < input.length && secondIndex < input.length) {
             switch (getCommand()) {
-                case 1:
+                case ADDITION:
                     input[getOutputIndex()] = input[getFirstIndex()] + input[getSecondIndex()];
                     break;
-                case 2:
+                case MULTIPLICATION:
                     input[getOutputIndex()] = input[getFirstIndex()] * input[getSecondIndex()];
                     break;
-                case 99:
-                    //System.out.println("Program ends. Final value of index 0 is: " + input[0]);
+                case QUIT:
                     break;
                 default:
                     System.out.println("Unknown command.");
@@ -48,6 +84,11 @@ public class Opcode {
         return input;
     }
 
+    /**
+     * Overrided toString to tests.
+     *
+     * @return String representation of Opcode object.
+     */
     @Override
     public String toString() {
         return "Opcode{" +

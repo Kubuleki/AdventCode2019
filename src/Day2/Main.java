@@ -5,11 +5,17 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * @author Krystian Cegiełka
+ * Advent of Code 2019 - Day 2
+ * https://adventofcode.com/2019/day/2
+ */
 public class Main {
     public static void main(String[] args) throws IOException {
-            // Tworzenie danych z pliku
+        // Tworzenie danych z pliku
         BufferedReader br = new BufferedReader(new FileReader(new File("./src/Day2/input.txt")));
         String[] separated = br.readLine().split(",");
+
         //Tworzenie ciągu.
         int[] input = new int[separated.length];
         for (int i = 0; i < separated.length; i++) {
@@ -19,26 +25,32 @@ public class Main {
         //Rozwiązanie 1 części zadania
         input[1] = 12;
         input[2] = 2;
-        System.out.println("1 odpowiedź: " + calculateOpcodes(input.clone()));
+        System.out.println("Value on the position[0]: " + calculateOpcodes(input.clone()));
 
         //Sprawdzanie verba i neuna, żeby osiągnąć 19690720
-        Point point = new Point(0, 0, false);
+        int Noun = 0;
+        int Verb = 0;
+        lookingForAnswer:
         for (int i = 0; i < 100; i++) {
             for (int j = 0; j < 100; j++) {
                 input[1] = i;
                 input[2] = j;
                 if (calculateOpcodes(input.clone()) == 19690720) {
-                    point = new Point(i, j, true);
-                    break;
+                    Noun = input[1];
+                    Verb = input[2];
+                    continue lookingForAnswer;
                 }
             }
-            if (point.isFound()) {
-                break;
-            }
         }
-        System.out.println("2 odpowiedź: " + getAnswer(point.getNoun(), point.getVerb()));
+        System.out.println("100 * noun + verb = " + getAnswer(Noun, Verb));
     }
 
+    /**
+     * Method Calculate Opcode
+     *
+     * @param input Table of integers contains orders.
+     * @return Calculated output.
+     */
     private static int calculateOpcodes(int[] input) {
         for (int i = 0; i < input.length - input.length % 4; i += 4) {
             Opcode op = new Opcode(input[i], input[i + 1], input[i + 2], input[i + 3]);
@@ -47,6 +59,13 @@ public class Main {
         return input[0];
     }
 
+    /**
+     * Method calculate answer for part 2 of the task.
+     *
+     * @param noun Integer on the position [1] of input table.
+     * @param verb Integer on the position [2] of input table.
+     * @return Answer for part 2 of the task.
+     */
     private static int getAnswer(int noun, int verb) {
         return 100 * noun + verb;
     }
