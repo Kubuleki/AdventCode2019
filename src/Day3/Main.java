@@ -26,8 +26,8 @@ public class Main {
 
         //Obliczanie odpowiedzi.
         System.out.println("\tANSWERS:");
-        Comparator.getAnswer(Comparator.getNodes(wire1, wire2));
-        Comparator.getSecondAnswer(Comparator.getNodes(wire1, wire2));
+        Comparator.getAnswer(Comparator.getNodes(wire1, wire2), true);
+        Comparator.getSecondAnswer(Comparator.getNodes(wire1, wire2), true);
     }
 
     /**
@@ -49,8 +49,13 @@ public class Main {
         System.out.println("\tTEST #" + ++testCounter + ":");
 
         System.out.println("Odpowiedź powinna być " + ans1 + ".");
-        Comparator.getAnswer(Comparator.getNodes(wire1, wire2));
+        boolean test1 = Comparator.getAnswer(Comparator.getNodes(wire1, wire2), true) == ans1;
+        System.out.println(test1 ? "Test 1 passed.\n" : "Test 1 failed.\n");
+
         System.out.println("Odpowiedź powinna być " + ans2 + ".");
-        Comparator.getSecondAnswer(Comparator.getNodes(wire1, wire2));
+        boolean test2 = Comparator.getSecondAnswer(Comparator.getNodes(wire1, wire2), true) == ans2;
+        System.out.println(test2 ? "Test 2 passed.\n" : "Test 2 failed.\n");
+
+        System.out.println("TEST #" + testCounter + ": " + ((test1 && test2) ? "PASSED.\n" : "FAILED.\n"));
     }
 }

@@ -63,15 +63,18 @@ public class Comparator {
      *
      * @param nodes List of Nodes.
      */
-    public static void getAnswer(List<Node> nodes) {
+    public static int getAnswer(List<Node> nodes, boolean pointDescription) {
         Point point = nodes.get(0).getPosition();
         for (Node n : nodes) {
             if (getDistance(n.getPosition()) < getDistance(point)) {
                 point = n.getPosition();
             }
         }
-        System.out.println("The closest Node via position is: ");
-        System.out.println(point + ", distance: " + Comparator.getDistance(point) + ".\n");
+        if (pointDescription) {
+            System.out.println("The closest Node via position is: ");
+            System.out.println(point + ", distance: " + Comparator.getDistance(point));
+        }
+        return Comparator.getDistance(point);
     }
 
     /**
@@ -79,15 +82,18 @@ public class Comparator {
      *
      * @param nodes List of Nodes.
      */
-    public static void getSecondAnswer(List<Node> nodes) {
+    public static int getSecondAnswer(List<Node> nodes, boolean pointDescription) {
         Node node = nodes.get(0);
         for (Node n : nodes) {
             if (n.getDistance() < node.getDistance()) {
                 node = n;
             }
         }
-        System.out.println("The closest Node via Wires length is: ");
-        System.out.println(node.getPosition() + ", distance: " + node.getDistance() + ".\n");
+        if (pointDescription) {
+            System.out.println("The closest Node via Wires length is: ");
+            System.out.println(node.getPosition() + ", distance: " + node.getDistance());
+        }
+        return node.getDistance();
     }
 
     /**

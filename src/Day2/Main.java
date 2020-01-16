@@ -30,22 +30,7 @@ public class Main {
         input[2] = 2;
         System.out.println("Value on the position[0]: " + calculateOpcodes(input.clone()));
 
-        //Sprawdzanie verba i neuna, żeby osiągnąć 19690720
-        int Noun = 0;
-        int Verb = 0;
-        lookingForAnswer:
-        for (int i = 0; i < 100; i++) {
-            for (int j = 0; j < 100; j++) {
-                input[1] = i;
-                input[2] = j;
-                if (calculateOpcodes(input.clone()) == 19690720) {
-                    Noun = input[1];
-                    Verb = input[2];
-                    continue lookingForAnswer;
-                }
-            }
-        }
-        System.out.println("100 * noun + verb = " + getAnswer(Noun, Verb));
+        System.out.println("100 * noun + verb = " + getAnswer(input, 19690720));
     }
 
     /**
@@ -65,11 +50,24 @@ public class Main {
     /**
      * Method calculate answer for part 2 of the task.
      *
-     * @param noun Integer on the position [1] of input table.
-     * @param verb Integer on the position [2] of input table.
+     * @param input Input table.
      * @return Answer for part 2 of the task.
      */
-    private static int getAnswer(int noun, int verb) {
+    private static int getAnswer(int[] input, int searchInt) {
+        int noun = 0;
+        int verb = 0;
+        lookingForAnswer:
+        for (int i = 0; i < 100; i++) {
+            for (int j = 0; j < 100; j++) {
+                input[1] = i;
+                input[2] = j;
+                if (calculateOpcodes(input.clone()) == searchInt) {
+                    noun = input[1];
+                    verb = input[2];
+                    continue lookingForAnswer;
+                }
+            }
+        }
         return 100 * noun + verb;
     }
 
@@ -87,21 +85,8 @@ public class Main {
 
         //Part 2:
         System.out.println("Neun should be 5, Verb 2, index 0 value 250, answer 502");
-        int Noun = 0;
-        int Verb = 0;
-        lookingForAnswer:
-        for (int i = 0; i < 100; i++) {
-            for (int j = 0; j < 100; j++) {
-                input[1] = i;
-                input[2] = j;
-                if (calculateOpcodes(input.clone()) == 250) {
-                    Noun = input[1];
-                    Verb = input[2];
-                    continue lookingForAnswer;
-                }
-            }
-        }
-        System.out.println("100 * noun + verb = " + getAnswer(Noun, Verb));
-        System.out.println(getAnswer(Noun, Verb) == 502 ? "Test 2 passed.\n" : "Test 2 failed.\n");
+
+        System.out.println("100 * noun + verb = " + getAnswer(input, 250));
+        System.out.println(getAnswer(input, 250) == 502 ? "Test 2 passed.\n" : "Test 2 failed.\n");
     }
 }
