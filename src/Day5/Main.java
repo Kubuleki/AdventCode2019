@@ -17,7 +17,13 @@ public class Main {
             inputs[i] = Integer.parseInt(separated[i]);
         }
         //ID of system. This time is 1 for first part, 5 for second.
-        int input = 5;
+        System.out.print("First part answer: ");
+        calculateResult(inputs.clone(), 1);
+        System.out.println("Second part answer: ");
+        calculateResult(inputs.clone(), 5);
+    }
+
+    private static void calculateResult(int[] inputs, int systemID) {
         Operation operation;
         forLoop:
         for (int i = 0; i < inputs.length; ) {
@@ -48,9 +54,9 @@ public class Main {
                 // p1 = input
                 case 3:
                     if (operation.getParameter1Mode() == 1) {
-                        inputs[i + 1] = input;
+                        inputs[i + 1] = systemID;
                     } else {
-                        inputs[inputs[i + 1]] = input;
+                        inputs[inputs[i + 1]] = systemID;
                     }
                     i += 2;
                     break;
